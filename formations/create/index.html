@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ignis - Créer une formation</title>
+    <link href="/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body class="h-dvh w-screen overflow-hidden">
+    <header
+      class="flex px-4 h-16 border-b border-b-gray-300 items-center justify-between w-full"
+    >
+      <a href="/"><h1 class="text-indigo-500 font-bold text-2xl">Ignis</h1></a>
+      <div class="flex w-fit gap-4">
+        <a
+          href="/formations"
+          class="flex items-center justify-between px-4 gap-2 text-slate-800 rounded-full bg-white duration-300 hover:bg-gray-100"
+        >
+          <span class="material-symbols-outlined">event</span>
+          <p class="text-s">Formations</p>
+        </a>
+        <a
+          href="/create/session"
+          class="bg-indigo-700 rounded-full flex items-center justify-between px-4 gap-2 duration-300 hover:bg-indigo-600"
+        >
+          <span class="material-symbols-outlined text-white">person_add</span>
+          <p class="text-s text-white">Programmer des sessions</p>
+        </a>
+        <a href="/settings"
+          ><img
+            src="https://randomuser.me/api/portraits/men/75.jpg"
+            class="rounded-full size-10"
+        /></a>
+      </div>
+    </header>
+    <main class="flex h-full w-full items-center justify-center">
+      <section class="flex flex-col gap-4 p-6 mb-24">
+        <h1 class="text-4xl font-bold col-span-3 text-center py-4">
+          Créer une formation
+        </h1>
+        <form
+          action="/create/formation"
+          method="POST"
+          class="flex flex-col gap-4 w-[32rem]"
+        >
+          <label for="name" class="flex flex-col gap-1">
+            <span class="text-s">Nom de la formation</span>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border border-gray-300 rounded-md p-2"
+            />
+          </label>
+          <label for="description" class="flex flex-col gap-1">
+            <span class="text-s">Description</span>
+            <textarea
+              name="description"
+              id="description"
+              class="border border-gray-300 rounded-md p-2"
+            ></textarea>
+          </label>
+          <label for="duration" class="flex flex-col gap-1">
+            <span class="text-s">Note maximale</span>
+            <input
+              type="number"
+              name="duration"
+              id="duration"
+              class="border border-gray-300 rounded-md p-2"
+            />
+          </label>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="javascript:history.back()"
+              class="bg-gray-200 rounded-md p-2 flex-1 text-center duration-300 hover:bg-gray-300"
+            >
+              Annuler
+            </a>
+            <button
+              type="submit"
+              class="bg-indigo-700 text-white rounded-md p-2 duration-300 hover:bg-indigo-600 flex-1"
+            >
+              Créer
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

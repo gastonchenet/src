@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ignis</title>
+    <link href="/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body class="h-dvh w-screen overflow-hidden">
+    <header
+      class="flex px-4 h-16 border-b border-b-gray-300 items-center justify-between w-full"
+    >
+      <a href="/"><h1 class="text-indigo-500 font-bold text-2xl">Ignis</h1></a>
+      <div class="flex w-fit gap-4">
+        <a
+          href="/sessions/create"
+          class="bg-indigo-700 rounded-full flex items-center justify-between px-4 gap-2 duration-300 hover:bg-indigo-600"
+        >
+          <span class="material-symbols-outlined text-white">person_add</span>
+          <p class="text-s text-white">Programmer des sessions</p>
+        </a>
+        <a href="/settings"
+          ><img
+            src="https://randomuser.me/api/portraits/men/75.jpg"
+            class="rounded-full size-10"
+        /></a>
+      </div>
+    </header>
+    <main class="flex h-full w-full">
+      <aside class="w-80 h-full border-r border-r-gray-300">
+        <div class="flex border-b border-b-gray-100">
+          <a
+            href="/"
+            class="flex-1 flex items-center justify-center py-2 border-r border-r-gray-100 text-sm duration-300 hover:bg-gray-100"
+            >Mode Salarié</a
+          >
+          <a
+            href="/formations"
+            class="flex-1 flex items-center justify-center py-2 text-sm border-b border-b-2 border-b-indigo-500 duration-300 hover:bg-gray-100"
+            >Mode Formations</a
+          >
+        </div>
+        <div class="p-4 pl-2">
+          <details class="flex flex-col gap-4 p-2" open>
+            <summary class="p-2 font-semibold">Statistiques</summary>
+            <div class="ml-4 my-2">
+              <div class="flex flex-col gap-2">
+                <p class="text-xs text-gray-400 font-bold">Résultats Moyens</p>
+                <div class="flex gap-1 items-center">
+                  <div class="w-16 rounded bg-green-500 text-white text-xs p-1">
+                    29%
+                  </div>
+                  <p class="text-xs">Validé</p>
+                </div>
+                <div class="flex gap-1 items-center">
+                  <div
+                    class="w-28 rounded bg-orange-400 text-white text-xs p-1"
+                  >
+                    63%
+                  </div>
+                  <p class="text-xs">En cours</p>
+                </div>
+                <div class="flex gap-1 items-center">
+                  <div class="w-8 rounded bg-red-500 text-white text-xs p-1">
+                    8%
+                  </div>
+                  <p class="text-xs">Échoué</p>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="flex flex-col gap-4 p-2" open>
+            <summary class="p-2 font-semibold">Recherche avancée</summary>
+            <div class="ml-4 my-2 flex flex-col gap-4">
+              <label for="search" class="flex flex-col gap-1">
+                <span class="text-xs">Rechercher</span>
+                <input
+                  type="text"
+                  name="search"
+                  id="search"
+                  class="border border-gray-300 rounded-md px-2 py-1.5 text-sm"
+                />
+              </label>
+              <label for="search" class="flex flex-col gap-1">
+                <span class="text-xs">Formation</span>
+                <div class="flex gap-2 mt-1">
+                  <button
+                    class="text-xs px-2 py-1 rounded bg-slate-100 cursor-pointer duration-300 hover:bg-slate-200"
+                  >
+                    TOEIC (Certification)
+                  </button>
+                  <button
+                    class="text-xs px-2 py-1 rounded bg-slate-100 cursor-pointer duration-300 hover:bg-slate-200"
+                  >
+                    RGPD
+                  </button>
+                </div>
+              </label>
+              <label for="search" class="flex flex-col gap-1">
+                <span class="text-xs">Statut</span>
+                <div class="flex gap-2 mt-1">
+                  <button
+                    class="text-xs px-2 py-1 rounded bg-slate-100 cursor-pointer duration-300 hover:bg-slate-200"
+                  >
+                    En cours
+                  </button>
+                  <button
+                    class="text-xs px-2 py-1 rounded bg-slate-100 cursor-pointer duration-300 hover:bg-slate-200"
+                  >
+                    Terminé
+                  </button>
+                </div>
+              </label>
+            </div>
+          </details>
+          <details class="flex flex-col gap-4 p-2" open>
+            <summary class="p-2 font-semibold">Alertes automatiques</summary>
+            <div class="ml-4 my-2 flex flex-col gap-4">
+              <button
+                class="bg-slate-100 p-3 rounded cursor-pointer duration-300 hover:bg-slate-200 text-left"
+              >
+                <p class="font-semibold">Session Terminée</p>
+                <p class="text-xs text-gray-500 mt-1">
+                  La session TOEIC (Certification) s'est achevée avec un taux de
+                  réussite de 73%.
+                </p>
+              </button>
+              <button
+                class="bg-slate-100 p-3 rounded cursor-pointer duration-300 hover:bg-slate-200 text-left"
+              >
+                <p class="font-semibold">Fin de validité</p>
+                <p class="text-xs text-gray-500 mt-1">
+                  La session RGPD de Mai 2022 arrive à expiration dans 3 jours.
+                </p>
+              </button>
+            </div>
+          </details>
+        </div>
+      </aside>
+      <table class="overflow-scroll flex-1">
+        <thead class="bg-gray-900 text-white">
+          <tr>
+            <th>Nom de la formation</th>
+            <th>Nb. Participants</th>
+            <th>Dates</th>
+            <th>Résultat Moyen</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold pl-4 inline-flex items-center">
+              <p>TOEIC (Certification)</p>
+              <a href="/formations/edit/?id=1">
+                <span
+                  class="material-symbols-outlined text-gray-400 !text-sm ml-2"
+                  >edit</span
+                >
+              </a>
+            </td>
+            <td class="font-semibold text-center">121</td>
+            <td class="font-semibold text-gray-400 text-center">
+              15 Mars - 20 Mai
+            </td>
+            <td class="font-semibold text-center">682/990</td>
+            <td class="gap-2 py-2 inline-flex items-center justify-center">
+              <div class="size-4 rounded-full bg-orange-400"></div>
+              <p class="font-semibold">En Cours</p>
+            </td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="font-semibold pl-4 inline-flex items-center">
+              <p>RGPD</p>
+              <a href="/formations/edit/?id=1">
+                <span
+                  class="material-symbols-outlined text-gray-400 !text-sm ml-2"
+                  >edit</span
+                >
+              </a>
+            </td>
+            <td class="font-semibold text-center">42</td>
+            <td class="font-semibold text-gray-400 text-center">
+              23 Décembre - 5 Janvier
+            </td>
+            <td class="font-semibold text-center">Validé</td>
+            <td class="gap-2 py-2 inline-flex items-center justify-center">
+              <div class="size-4 rounded-full bg-green-500"></div>
+              <p class="font-semibold">Terminé</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-64"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="p-3 gap-4 inline-flex items-center">
+              <div class="rounded-full bg-gray-200 h-6 w-48"></div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <a
+      href="/formations/create/"
+      class="absolute bottom-5 right-5 bg-indigo-600 size-12 flex items-center justify-center rounded-full duration-300 hover:bg-indigo-700"
+    >
+      <span class="material-symbols-outlined text-white">add</span>
+    </a>
+  </body>
+</html>
